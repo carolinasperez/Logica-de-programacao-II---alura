@@ -13,6 +13,7 @@
 
     var tela = document.querySelector("canvas");
     var pincel = tela.getContext('2d');
+    var PI = 3.14;
 
     //retangulo
 
@@ -35,9 +36,9 @@
 
     //circulo
 
-    pincel.fillStyle = 'blue';
+    pincel.fillStyle = 'darkblue';
     pincel.beginPath();
-    pincel.arc(300, 200, 100, 0, 2 * 3.14);
+    pincel.arc(300, 200, 100, 0, 2 * PI);
     preencher();
 
 

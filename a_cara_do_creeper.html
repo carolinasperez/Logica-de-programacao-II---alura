@@ -1,0 +1,48 @@
+﻿<canvas width="600" height="400"></canvas>
+
+<script>
+
+    //var
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext('2d');
+
+    //functions
+    function corPincel(cor) {
+        pincel.fillStyle = cor;
+    }
+  
+    function preencherPincel() {
+        pincel.fill();
+    }
+
+    function retagulo(x, y, largura, altura) {
+        pincel.fillRect(x, y, largura, altura);
+    }
+
+    //fundo
+    corPincel('grey');
+    retagulo(0, 0, 600, 400);
+
+    //rosto
+
+    corPincel('darkgreen');
+    retagulo(125, 50, 350, 300);
+
+    corPincel('black');
+
+    //olhos
+    retagulo(175, 100, 90, 90);
+
+    retagulo(335, 100, 90, 90);
+
+    //nariz
+    retagulo(265, 190, 70, 100);
+
+    //boca
+    retagulo(225, 240, 40, 110);
+    retagulo(335, 240, 40, 110);
+
+
+
+
+</script>

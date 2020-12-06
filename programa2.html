@@ -1,0 +1,78 @@
+﻿<canvas width="600" height="400"></canvas>
+
+<script>
+
+    //var
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext('2d');
+
+    //functions
+    function corPincel(cor) {
+        pincel.fillStyle = cor;
+    }
+
+    function quadrado(x, y, largura, altura) {
+        pincel.fillRect(x, y, largura, altura);
+        fillStroke = 'black';
+        pincel.strokeRect(x, y, largura, altura);
+    }
+
+      //fundo
+    corPincel('lightgrey');
+    quadrado(0, 0, 600, 400);
+
+    /*
+    var x = 0;
+    while (x <= 600) {
+        corPincel('purple');
+        quadrado(x, 0, 50, 50);
+        corPincel('darkblue');
+        quadrado(x, 50, 50, 50);
+        corPincel('blue');
+        quadrado(x, 100, 50, 50);
+        corPincel('darkgreen');
+        quadrado(x, 150, 50, 50);
+        corPincel('green');
+        quadrado(x, 200, 50, 50);
+        corPincel('yellow');
+        quadrado(x, 250, 50, 50);
+        corPincel('orange');
+        quadrado(x, 300, 50, 50);
+        corPincel('red');
+        quadrado(x, 350, 50, 50);
+
+        x = x + 50;
+    }
+    */
+
+    for (var x = 0; x <= 600; x = x + 50) {
+        corPincel('purple');
+        quadrado(x, 0, 50, 50);
+        corPincel('darkblue');
+        quadrado(x, 50, 50, 50);
+        corPincel('blue');
+        quadrado(x, 100, 50, 50);
+        corPincel('darkgreen');
+        quadrado(x, 150, 50, 50);
+        corPincel('green');
+        quadrado(x, 200, 50, 50);
+        corPincel('yellow');
+        quadrado(x, 250, 50, 50);
+        corPincel('orange');
+        quadrado(x, 300, 50, 50);
+        corPincel('red');
+        quadrado(x, 350, 50, 50);
+    }
+
+    /*
+        var x = 0;
+        var y = 0;
+    while (x <= 600 && y <= 400) {
+        corPincel('blue');
+        quadrado(x, y, 50, 50);
+        x = x + 50;
+        y = y + 50;
+    }
+    */
+
+</script>         

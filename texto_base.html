@@ -1,0 +1,40 @@
+﻿<canvas width="600" height="400"></canvas>
+
+<script>
+
+    //var
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext('2d');
+    var PI = 3.14;
+
+    //functions
+    function corPincel(cor) {
+        pincel.fillStyle = cor;
+    }
+  
+    function preencherPincel() {
+        pincel.fill();
+    }
+
+    function retagulo(x, y, largura, altura) {
+        pincel.fillRect(x, y, largura, altura);
+    }
+
+    function triangulo(x, y) {
+        pincel.beginPath();
+        pincel.moveTo(x, y);
+    }
+
+    function linha(x, y) {
+        pincel.lineTo(x, y);
+    }
+
+    function circulo(a, b, c, d, e) {
+        pincel.beginPath();
+        pincel.arc(a, b, c, d, e * PI);;
+     }
+
+
+
+
+</script>

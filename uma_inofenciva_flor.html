@@ -11,13 +11,15 @@
     function corPincel(cor) {
         pincel.fillStyle = cor;
     }
-  
+
     function preencherPincel() {
         pincel.fill();
     }
 
     function retagulo(x, y, largura, altura) {
         pincel.fillRect(x, y, largura, altura);
+        fillStroke = 'black';
+        pincel.strokeRect(x, y, largura, altura);
     }
 
     function triangulo(x, y) {
@@ -29,11 +31,35 @@
         pincel.lineTo(x, y);
     }
 
-    function circulo(x, y, raio) {
+    function circulo(cor, x, y, raio) {
+        pincel.fillStyle = cor;
         pincel.beginPath();
         pincel.arc(x, y, raio, 0, 2 * PI);
         preencherPincel();
-     }
+    }
+
+    function desenhaFlor() {
+    //vermelho
+    circulo('red', 300, 200, 15);
+
+    //amarelo
+    circulo('yellow', 300, 170, 15);
+
+    //preto
+    circulo('black', 330, 200, 15);
+
+    //azul
+    circulo('blue', 300, 230, 15);
+
+    //laranja
+    circulo('orange', 270, 200, 15);
+    }
+
+    //fundo
+    corPincel('lightgrey');
+    retagulo(0, 0, 600, 400);
+
+    desenhaFlor();
 
 
 

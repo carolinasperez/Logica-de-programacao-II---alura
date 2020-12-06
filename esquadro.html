@@ -1,0 +1,49 @@
+﻿<canvas width="500" height="450"></canvas>
+
+<script>
+
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext('2d');
+
+    function corPincel(cor) {
+        pincel.fillStyle = cor;
+    }
+
+    function preencherPincel() { 
+        pincel.fill();
+    }
+
+    function retagulo(x, y, largura, altura) {
+        pincel.fillRect(x, y, largura, altura);
+    }
+
+    function triangulo(x, y) {
+        pincel.beginPath();
+        pincel.moveTo(x, y);
+    }
+
+    function linha(x, y) {
+        pincel.lineTo(x, y);
+    }
+                  
+    //fundo
+    corPincel('pink');
+    retagulo(0, 0, 600, 450);
+
+    //esquadro
+
+    //triangulo de fora
+    corPincel("black");
+    triangulo(75, 50); 
+    linha(75, 400);
+    linha(425, 400);
+    preencherPincel();
+
+    //triangulo de dentro
+    corPincel("pink");
+    triangulo(125, 175);
+    linha(125, 350);
+    linha(300, 350);
+    preencherPincel();
+
+</script>

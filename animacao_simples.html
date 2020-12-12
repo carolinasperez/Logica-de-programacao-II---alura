@@ -1,0 +1,100 @@
+<canvas width="1000" height="400"></canvas>
+
+<script>
+
+var tela = document.querySelector('canvas');
+var pincel = tela.getContext('2d');
+var x = 20;
+
+function desenhaCirculo(x, y, raio) 
+{
+        pincel.fillStyle = 'pink';
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+}
+
+function limpaTela()
+{
+	pincel.fillStyle = 'lightgrey';
+	pincel.fillRect(0 ,0, 1000, 400);
+}
+/*
+function testeAndar()
+{
+	if(x <= 1000)
+	{
+		return andar = true;
+	}
+	else
+	{
+		return andar = false;
+	}
+}
+*/
+
+function atualizaTela()
+{
+	/*
+	var andar = true;
+	if (true) 
+	{
+		if(x <= 1000)
+		{
+			andar = true;
+		}
+		else
+		{
+			andar = false;
+		}	
+
+
+		if(andar == true)
+		{
+			limpaTela();
+			desenhaCirculo(x, 20, 10);
+			x++;
+		}
+
+		if(andar == false)
+		{
+			limpaTela();
+			desenhaCirculo(x, 20, 10);
+			x--;
+		}
+	}
+	*/
+
+	if(x < 1000)
+	{
+		while(x == 1000)
+		{
+			limpaTela();
+			desenhaCirculo(x, 20, 10);
+			x = x + 1;
+		}
+	}
+
+	if(x == 1000)
+	{
+		while(x <=20)
+		{
+			limpaTela();
+			desenhaCirculo(x, 20, 10);
+			x = x - 1;
+		}
+	}
+	console.log(x);
+}
+
+
+
+
+//fundo
+pincel.fillStyle = 'lightgrey';
+pincel.fillRect(0, 0, 600, 400);
+pincel.fill();
+
+setInterval(atualizaTela, 5);
+
+</script>

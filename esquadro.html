@@ -1,49 +1,36 @@
-﻿<canvas width="500" height="450"></canvas>
-
+<canvas width="600" height="450"></canvas>
 <script>
+//var 
+var tela = document.querySelector('canvas');
+var pincel = tela.getContext('2d');
+var corFundo = 'lightgrey';
 
-    var tela = document.querySelector("canvas");
-    var pincel = tela.getContext('2d');
+function desenhaEsquadro(xa, ya, xc, yc, largura, altura, espessura, cor) 
+{
+	//triangulo grande
+    pincel.fillStyle = cor;
+    pincel.beginPath();
+    pincel.moveTo(xa, ya);
+    pincel.lineTo(xa, yc);
+    pincel.lineTo(xc, yc);
+    pincel.fill();
 
-    function corPincel(cor) {
-        pincel.fillStyle = cor;
-    }
+    //triangulo pequeno
+    pincel.fillStyle = corFundo;
+    pincel.beginPath();
+    pincel.moveTo((xa + espessura), (ya + (espessura * 2.5)));
+    pincel.lineTo((xa + espessura), (yc - espessura));
+    pincel.lineTo((xc - (2.5 * espessura)), (yc - espessura));
+    pincel.fill();
+}
 
-    function preencherPincel() { 
-        pincel.fill();
-    }
+//fundo
+pincel.fillStyle = corFundo;
+pincel.fillRect(0, 0, 600, 450);
+pincel.fillStroke = "black";
+pincel.strokeRect(0, 0, 600, 450);
 
-    function retagulo(x, y, largura, altura) {
-        pincel.fillRect(x, y, largura, altura);
-    }
-
-    function triangulo(x, y) {
-        pincel.beginPath();
-        pincel.moveTo(x, y);
-    }
-
-    function linha(x, y) {
-        pincel.lineTo(x, y);
-    }
-                  
-    //fundo
-    corPincel('pink');
-    retagulo(0, 0, 600, 450);
-
-    //esquadro
-
-    //triangulo de fora
-    corPincel("black");
-    triangulo(75, 50); 
-    linha(75, 400);
-    linha(425, 400);
-    preencherPincel();
-
-    //triangulo de dentro
-    corPincel("pink");
-    triangulo(125, 175);
-    linha(125, 350);
-    linha(300, 350);
-    preencherPincel();
+desenhaEsquadro(50, 50, 400, 400, 350, 350, 50, "black");
+desenhaEsquadro(100, 175, 275, 350, "lightgrey");
 
 </script>

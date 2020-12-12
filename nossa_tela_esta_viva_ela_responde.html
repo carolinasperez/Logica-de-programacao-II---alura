@@ -1,0 +1,46 @@
+<meta charset="UTF-8">
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+//var
+var tela = document.querySelector('canvas');
+var pincel = tela.getContext('2d');
+var raio = prompt("Qual será o raio dos circulos?");
+var cor = ["blue", "red", "grey"];
+var posicao = 0;
+
+function desenhaCirculo(evento)
+{
+	var x = evento.pageX - tela.offsetLeft;
+	var y = evento.pageY - tela.offsetTop;
+	
+	pincel.fillStyle = cor[posicao];
+	pincel.beginPath();
+	pincel.arc(x, y, raio, 0, 2*3.14);
+	pincel.fill();
+	console.log(x + ',' + y);
+}
+
+function mudaCor () 
+{
+	posicao++
+
+	if(posicao >= cor.length) 
+	{
+        posicao = 0;
+    }	
+
+	return false;
+}	
+
+//fundo
+pincel.fillStyle = "lightgrey"; 
+pincel.fillRect(0, 0, 600, 400);
+pincel.fillStroke = 'black';
+pincel.strokeRect(0, 0, 600, 400);
+
+tela.oncontextmenu = mudaCor;
+tela.onclick = desenhaCirculo;
+ 
+</script>
